@@ -1589,3 +1589,52 @@ a {
   }
 
 }
+/* =========================
+   CLICK LAYER FIX
+========================= */
+
+.envelope {
+  isolation: isolate;
+}
+
+.envelope-back,
+.preview-card,
+.front-left,
+.front-right,
+.front-bottom,
+.flap,
+.flap-pattern,
+.envelope-shadow {
+  pointer-events: none;
+}
+
+.seal-composition {
+  z-index: 1000;
+  pointer-events: none;
+
+  transform:
+    translateX(-50%)
+    translateZ(80px);
+}
+
+.heart-seal {
+  position: relative;
+
+  z-index: 1001;
+
+  pointer-events: auto;
+
+  touch-action: manipulation;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.seal-letter,
+.seal-line {
+  pointer-events: none;
+}
+
+.open-hint {
+  pointer-events: none;
+}
