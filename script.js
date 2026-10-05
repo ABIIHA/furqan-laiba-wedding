@@ -1,82 +1,75 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const envelope =
-    document.getElementById("envelope")
-
-  const openInvitation =
-    document.getElementById("openInvitation")
-
-  const invitationPage =
-    document.getElementById("invitationPage")
+const envelope =
+  document.getElementById(
+    "envelope"
+  )
 
 
-  if (
-    !envelope ||
-    !openInvitation ||
-    !invitationPage
-  ) {
-    console.error(
-      "Invitation elements could not be found."
-    )
-
-    return
-  }
+const openInvitation =
+  document.getElementById(
+    "openInvitation"
+  )
 
 
-  let opened = false
+const weddingPage =
+  document.getElementById(
+    "weddingPage"
+  )
 
 
-  function revealInvitation() {
-    if (opened) return
+let opened = false
+
+
+openInvitation.addEventListener(
+  "click",
+  () => {
+
+    if (opened) {
+      return
+    }
+
 
     opened = true
 
 
-    envelope.classList.add("open")
-
-
-    openInvitation.setAttribute(
-      "aria-expanded",
-      "true"
+    envelope.classList.add(
+      "open"
     )
 
 
-    window.setTimeout(() => {
-      invitationPage.classList.add(
-        "visible"
-      )
+    setTimeout(
+      () => {
 
-      window.requestAnimationFrame(() => {
-        invitationPage.classList.add(
-          "show"
+        weddingPage.classList.add(
+          "visible"
         )
-      })
-    }, 1100)
 
 
-    window.setTimeout(() => {
-      invitationPage.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
-    }, 1950)
+        requestAnimationFrame(
+          () => {
+
+            weddingPage.classList.add(
+              "show"
+            )
+
+          }
+        )
+
+      },
+      1250
+    )
+
+
+    setTimeout(
+      () => {
+
+        weddingPage.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        })
+
+      },
+      2200
+    )
+
   }
-
-
-  openInvitation.addEventListener(
-    "click",
-    revealInvitation
-  )
-
-
-  openInvitation.addEventListener(
-    "touchend",
-    (event) => {
-      event.preventDefault()
-
-      revealInvitation()
-    },
-    {
-      passive: false,
-    }
-  )
-})
+)
