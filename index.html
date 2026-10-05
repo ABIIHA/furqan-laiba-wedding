@@ -3,1366 +3,64 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <meta
     name="description"
     content="Nikkah Ceremony Invitation of Furqan Moin"
   />
 
+  <meta name="theme-color" content="#f5efe6" />
+
   <title>Furqan Moin | Nikkah Invitation</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
 
-  <style>
-    :root {
-      --bg-1: #fffaf7;
-      --bg-2: #f7eee7;
-      --paper: #fffdf9;
-
-      --green: #465444;
-      --green-dark: #313c30;
-      --green-soft: #75806e;
-
-      --gold: #a77b43;
-      --gold-light: #d2b17c;
-
-      --text: #40372f;
-      --muted: #786e64;
-
-      --shadow: rgba(62, 48, 36, 0.13);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: "Montserrat", sans-serif;
-      color: var(--text);
-      overflow-x: hidden;
-
-      background:
-        radial-gradient(
-          circle at 12% 8%,
-          rgba(255, 255, 255, 0.95),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 88% 84%,
-          rgba(201, 187, 163, 0.2),
-          transparent 30%
-        ),
-        linear-gradient(
-          180deg,
-          var(--bg-1) 0%,
-          var(--bg-2) 100%
-        );
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* =========================
-       INTRO / ENVELOPE
-    ========================== */
-
-    .intro {
-      min-height: 100svh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      position: relative;
-      overflow: hidden;
-
-      padding: 40px 18px 70px;
-    }
-
-    .ambient {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      pointer-events: none;
-    }
-
-    .ambient.one {
-      width: 380px;
-      height: 380px;
-
-      top: -180px;
-      left: -170px;
-
-      background: rgba(187, 204, 180, 0.28);
-    }
-
-    .ambient.two {
-      width: 430px;
-      height: 430px;
-
-      bottom: -230px;
-      right: -180px;
-
-      background: rgba(198, 168, 125, 0.18);
-    }
-
-    .intro-inner {
-      width: 100%;
-      max-width: 520px;
-
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .intro-kicker {
-      margin-bottom: 9px;
-
-      font-family: "Cormorant Garamond", serif;
-      font-size: 12px;
-      font-weight: 600;
-
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-
-      color: var(--gold);
-    }
-
-    .intro-title {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(42px, 9vw, 62px);
-      font-weight: 500;
-      line-height: 1;
-
-      color: var(--green-dark);
-    }
-
-    .intro-copy {
-      max-width: 360px;
-      margin: 14px auto 45px;
-
-      font-size: 12px;
-      line-height: 1.8;
-
-      color: var(--muted);
-    }
-
-    .envelope-stage {
-      min-height: 520px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      perspective: 1600px;
-    }
-
-    .envelope {
-      width: min(92vw, 430px);
-      height: 280px;
-
-      position: relative;
-
-      perspective: 1600px;
-      transform-style: preserve-3d;
-    }
-
-    .envelope-shadow {
-      position: absolute;
-
-      width: 88%;
-      height: 48px;
-
-      left: 6%;
-      bottom: -32px;
-
-      background: rgba(68, 56, 44, 0.17);
-
-      border-radius: 50%;
-      filter: blur(22px);
-
-      z-index: 0;
-
-      transition: opacity 0.7s ease;
-    }
-
-    .envelope-back {
-      position: absolute;
-      inset: 0;
-
-      border-radius: 10px 10px 24px 24px;
-
-      border: 1px solid rgba(119, 98, 72, 0.13);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.45),
-          transparent 48%
-        ),
-        #e8ded1;
-
-      box-shadow:
-        0 30px 65px var(--shadow);
-
-      z-index: 1;
-    }
-
-    /* card inside envelope */
-
-    .invitation-preview {
-      position: absolute;
-
-      width: calc(100% - 34px);
-      height: 500px;
-
-      left: 17px;
-      bottom: 20px;
-
-      z-index: 2;
-
-      border-radius: 20px 20px 12px 12px;
-
-      overflow: hidden;
-
-      background:
-        radial-gradient(
-          circle at 0% 0%,
-          rgba(225, 231, 218, 0.7),
-          transparent 28%
-        ),
-        radial-gradient(
-          circle at 100% 100%,
-          rgba(215, 196, 163, 0.25),
-          transparent 27%
-        ),
-        var(--paper);
-
-      border:
-        1px solid rgba(163, 127, 74, 0.24);
-
-      box-shadow:
-        0 25px 50px rgba(70, 54, 39, 0.13);
-
-      transform: translateY(180px);
-
-      transition:
-        transform 1.45s cubic-bezier(.22, .61, .36, 1);
-    }
-
-    .preview-border {
-      position: absolute;
-      inset: 12px;
-
-      border:
-        1px solid rgba(167, 123, 67, 0.38);
-
-      border-radius: 14px;
-
-      pointer-events: none;
-    }
-
-    .preview-decoration {
-      position: absolute;
-
-      width: 170px;
-      height: 170px;
-
-      border-radius: 50%;
-
-      opacity: 0.08;
-
-      background:
-        repeating-radial-gradient(
-          circle,
-          var(--green) 0 2px,
-          transparent 2px 9px
-        );
-
-      pointer-events: none;
-    }
-
-    .preview-decoration.left {
-      left: -90px;
-      bottom: -55px;
-    }
-
-    .preview-decoration.right {
-      right: -95px;
-      top: -65px;
-    }
-
-    .preview-content {
-      position: relative;
-      z-index: 3;
-
-      padding: 34px 27px 24px;
-
-      text-align: center;
-    }
-
-    .preview-small {
-      font-size: 9px;
-
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-
-      color: var(--gold);
-    }
-
-    .preview-content h2 {
-      margin-top: 9px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 30px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-
-      color: var(--green-dark);
-    }
-
-    .preview-grandson {
-      margin-top: 5px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 12px;
-      letter-spacing: 0.11em;
-
-      color: var(--muted);
-    }
-
-    .preview-name {
-      margin-top: 17px;
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: 45px;
-      line-height: 1;
-
-      color: var(--gold);
-    }
-
-    .preview-parent {
-      margin-top: 10px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 15px;
-      font-weight: 600;
-
-      letter-spacing: 0.05em;
-
-      color: var(--text);
-    }
-
-    .preview-and {
-      display: block;
-
-      margin: 9px 0 2px;
-
-      font-family: "Great Vibes", cursive;
-      font-size: 29px;
-
-      color: var(--green);
-    }
-
-    .preview-daughter {
-      display: block;
-
-      font-family: "Great Vibes", cursive;
-      font-size: 31px;
-
-      color: var(--gold);
-    }
-
-    .preview-bride-parent {
-      margin-top: 3px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 17px;
-      font-weight: 700;
-
-      letter-spacing: 0.06em;
-    }
-
-    .preview-divider {
-      width: 65px;
-      height: 1px;
-
-      margin: 17px auto;
-
-      background: rgba(167, 123, 67, 0.45);
-    }
-
-    .preview-detail {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 14px;
-      font-weight: 600;
-
-      line-height: 1.55;
-      letter-spacing: 0.03em;
-
-      color: var(--green-dark);
-    }
-
-    /* envelope fronts */
-
-    .front-left,
-    .front-right {
-      position: absolute;
-
-      bottom: 0;
-
-      width: 52%;
-      height: 76%;
-
-      z-index: 5;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.3),
-          transparent 50%
-        ),
-        #e9dfd2;
-    }
-
-    .front-left {
-      left: 0;
-
-      clip-path:
-        polygon(
-          0 0,
-          100% 60%,
-          100% 100%,
-          0 100%
-        );
-
-      border-radius: 0 0 0 24px;
-    }
-
-    .front-right {
-      right: 0;
-
-      clip-path:
-        polygon(
-          100% 0,
-          0 60%,
-          0 100%,
-          100% 100%
-        );
-
-      border-radius: 0 0 24px 0;
-    }
-
-    .front-bottom {
-      position: absolute;
-
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      height: 52%;
-
-      z-index: 6;
-
-      clip-path:
-        polygon(
-          0 100%,
-          50% 0,
-          100% 100%
-        );
-
-      border-radius: 0 0 24px 24px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #e8ded1,
-          #ddd0c0
-        );
-    }
-
-    /* envelope flap */
-
-    .flap {
-      position: absolute;
-
-      left: 0;
-      right: 0;
-      top: 0;
-
-      height: 62%;
-
-      z-index: 8;
-
-      transform-origin: top center;
-      transform: rotateX(0deg);
-
-      backface-visibility: hidden;
-
-      clip-path:
-        polygon(
-          0 0,
-          100% 0,
-          50% 100%
-        );
-
-      border-radius: 10px 10px 0 0;
-
-      background:
-        linear-gradient(
-          180deg,
-          #eee5da 0%,
-          #ddd0c0 100%
-        );
-
-      transition:
-        transform 1.15s cubic-bezier(.22, .61, .36, 1);
-    }
-
-    .flap::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      opacity: 0.15;
-
-      background-image:
-        radial-gradient(
-          circle at center,
-          var(--gold) 0 1px,
-          transparent 1.5px
-        );
-
-      background-size: 16px 16px;
-    }
-
-    /* F HEART L */
-
-    .seal-group {
-      position: absolute;
-
-      left: 50%;
-      bottom: 27px;
-
-      transform: translateX(-50%);
-
-      z-index: 15;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      gap: 13px;
-
-      transition:
-        opacity 0.45s ease,
-        transform 0.45s ease;
-    }
-
-    .seal-letter {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 29px;
-      font-weight: 600;
-
-      color: #71563a;
-    }
-
-    .heart-seal {
-      width: 76px;
-      height: 76px;
-
-      border: 4px solid rgba(108, 77, 41, 0.16);
-      border-radius: 50%;
-
-      cursor: pointer;
-
-      display: grid;
-      place-items: center;
-
-      background:
-        radial-gradient(
-          circle at 32% 25%,
-          #e7ce9c,
-          #c89f61 52%,
-          #9e713b 100%
-        );
-
-      color: #fff9ed;
-
-      box-shadow:
-        0 13px 30px rgba(80, 56, 31, 0.25),
-        inset 0 0 0 4px rgba(255, 255, 255, 0.14);
-
-      transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease;
-
-      animation: gentleHeart 2.2s ease-in-out infinite;
-    }
-
-    .heart-seal span {
-      font-size: 25px;
-      line-height: 1;
-    }
-
-    .heart-seal:hover {
-      transform: scale(1.07);
-
-      box-shadow:
-        0 17px 34px rgba(80, 56, 31, 0.29),
-        inset 0 0 0 4px rgba(255, 255, 255, 0.18);
-    }
-
-    .heart-seal:focus-visible {
-      outline:
-        3px solid rgba(167, 123, 67, 0.28);
-
-      outline-offset: 5px;
-    }
-
-    @keyframes gentleHeart {
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.045);
-      }
-    }
-
-    .tap-text {
-      position: absolute;
-
-      left: 50%;
-      bottom: -72px;
-
-      transform: translateX(-50%);
-
-      white-space: nowrap;
-
-      z-index: 18;
-
-      font-size: 10px;
-      font-weight: 500;
-
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-
-      color: var(--green-soft);
-
-      animation: tapPulse 1.8s ease-in-out infinite;
-    }
-
-    @keyframes tapPulse {
-      0%,
-      100% {
-        opacity: 0.45;
-      }
-
-      50% {
-        opacity: 1;
-      }
-    }
-
-    /* open state */
-
-    .envelope.open .flap {
-      transform: rotateX(-180deg);
-      z-index: 0;
-    }
-
-    .envelope.open .seal-group {
-      opacity: 0;
-
-      transform:
-        translateX(-50%)
-        scale(0.75);
-
-      pointer-events: none;
-    }
-
-    .envelope.open .tap-text {
-      opacity: 0;
-    }
-
-    .envelope.open .invitation-preview {
-      transform: translateY(-160px);
-    }
-
-    /* =========================
-       FULL INVITATION
-    ========================== */
-
-    .invitation-page {
-      display: none;
-
-      opacity: 0;
-      transform: translateY(35px);
-
-      padding:
-        70px 18px 85px;
-
-      transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
-    }
-
-    .invitation-page.visible {
-      display: block;
-    }
-
-    .invitation-page.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .main-card {
-      width: 100%;
-      max-width: 690px;
-
-      margin: 0 auto;
-
-      position: relative;
-      overflow: hidden;
-
-      padding:
-        62px 42px 48px;
-
-      border:
-        1px solid rgba(167, 123, 67, 0.28);
-
-      border-radius: 30px;
-
-      background:
-        radial-gradient(
-          circle at 0% 0%,
-          rgba(205, 218, 198, 0.44),
-          transparent 27%
-        ),
-        radial-gradient(
-          circle at 100% 100%,
-          rgba(204, 179, 137, 0.23),
-          transparent 28%
-        ),
-        rgba(255, 253, 249, 0.94);
-
-      box-shadow:
-        0 35px 85px rgba(70, 54, 39, 0.12);
-
-      text-align: center;
-
-      backdrop-filter: blur(12px);
-    }
-
-    .main-card::before {
-      content: "";
-
-      position: absolute;
-      inset: 15px;
-
-      border:
-        1px solid rgba(167, 123, 67, 0.28);
-
-      border-radius: 20px;
-
-      pointer-events: none;
-    }
-
-    .leaf {
-      position: absolute;
-
-      width: 190px;
-      height: 190px;
-
-      opacity: 0.08;
-
-      background:
-        repeating-radial-gradient(
-          ellipse at center,
-          var(--green) 0 2px,
-          transparent 2px 10px
-        );
-
-      border-radius: 50%;
-
-      pointer-events: none;
-    }
-
-    .leaf.top {
-      top: -100px;
-      right: -85px;
-    }
-
-    .leaf.bottom {
-      bottom: -105px;
-      left: -80px;
-    }
-
-    .card-inner {
-      position: relative;
-      z-index: 2;
-    }
-
-    .bismillah {
-      margin-bottom: 16px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 12px;
-
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-
-      color: var(--gold);
-    }
-
-    .ceremony-title {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(35px, 7vw, 54px);
-      font-weight: 600;
-
-      letter-spacing: 0.07em;
-      line-height: 1;
-
-      color: var(--green-dark);
-    }
-
-    .grandson {
-      margin-top: 9px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(15px, 3.5vw, 20px);
-      font-weight: 500;
-
-      letter-spacing: 0.07em;
-
-      color: var(--text);
-    }
-
-    .groom-name {
-      margin-top: 25px;
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: clamp(53px, 11vw, 78px);
-      line-height: 0.95;
-
-      color: var(--gold);
-    }
-
-    .groom-parents {
-      margin-top: 15px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(17px, 4vw, 23px);
-      font-weight: 600;
-
-      letter-spacing: 0.04em;
-
-      color: var(--text);
-    }
-
-    .and-large {
-      display: block;
-
-      margin: 10px 0 1px;
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: 37px;
-
-      color: var(--green);
-    }
-
-    .daughter-of {
-      display: block;
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: clamp(40px, 8vw, 55px);
-
-      color: var(--gold);
-    }
-
-    .bride-parent {
-      margin-top: 5px;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(21px, 4.5vw, 28px);
-      font-weight: 700;
-
-      letter-spacing: 0.06em;
-
-      color: var(--text);
-    }
-
-    .ornament {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      gap: 12px;
-
-      margin: 26px auto;
-    }
-
-    .ornament::before,
-    .ornament::after {
-      content: "";
-
-      width: 55px;
-      height: 1px;
-
-      background:
-        rgba(167, 123, 67, 0.43);
-    }
-
-    .ornament span {
-      color: var(--gold);
-      font-size: 14px;
-    }
-
-    .ceremony-info {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(18px, 4vw, 23px);
-      font-weight: 600;
-
-      line-height: 1.6;
-
-      color: var(--green-dark);
-    }
-
-    .ceremony-info strong {
-      font-weight: 700;
-    }
-
-    /* cards below */
-
-    .details-area {
-      max-width: 690px;
-
-      margin: 22px auto 0;
-
-      display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-      gap: 18px;
-    }
-
-    .info-card {
-      padding: 31px 24px;
-
-      border-radius: 24px;
-
-      text-align: center;
-
-      border:
-        1px solid rgba(125, 107, 83, 0.14);
-
-      background:
-        rgba(255, 253, 249, 0.78);
-
-      box-shadow:
-        0 20px 55px rgba(73, 57, 41, 0.07);
-    }
-
-    .info-label {
-      margin-bottom: 8px;
-
-      font-size: 9px;
-      font-weight: 600;
-
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-
-      color: var(--gold);
-    }
-
-    .info-card h3 {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 30px;
-      font-weight: 600;
-
-      color: var(--green-dark);
-    }
-
-    .info-card p {
-      margin-top: 10px;
-
-      font-size: 12px;
-      line-height: 1.8;
-
-      color: var(--muted);
-    }
-
-    .location-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      margin-top: 17px;
-
-      min-height: 44px;
-
-      padding:
-        0 23px;
-
-      border:
-        1px solid rgba(70, 84, 68, 0.23);
-
-      border-radius: 999px;
-
-      text-decoration: none;
-
-      font-size: 10px;
-      font-weight: 600;
-
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-
-      color: white;
-
-      background: var(--green);
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .location-button:hover {
-      transform: translateY(-2px);
-      background: var(--green-dark);
-    }
-
-    .programme {
-      margin-top: 18px;
-    }
-
-    .programme-row {
-      display: flex;
-      align-items: center;
-
-      gap: 10px;
-
-      padding: 10px 0;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 18px;
-      font-weight: 600;
-
-      color: var(--text);
-    }
-
-    .programme-row + .programme-row {
-      border-top:
-        1px solid rgba(122, 102, 76, 0.12);
-    }
-
-    .programme-title {
-      white-space: nowrap;
-    }
-
-    .dots {
-      flex: 1;
-
-      border-bottom:
-        1px dotted rgba(80, 69, 57, 0.42);
-
-      transform: translateY(-2px);
-    }
-
-    .programme-time {
-      white-space: nowrap;
-
-      color: var(--green-dark);
-    }
-
-    /* RSVP */
-
-    .rsvp-card {
-      max-width: 690px;
-
-      margin: 18px auto 0;
-
-      padding: 31px 25px;
-
-      border-radius: 24px;
-
-      text-align: center;
-
-      border:
-        1px solid rgba(125, 107, 83, 0.14);
-
-      background:
-        rgba(255, 253, 249, 0.78);
-
-      box-shadow:
-        0 20px 55px rgba(73, 57, 41, 0.07);
-    }
-
-    .rsvp-title {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 31px;
-      font-weight: 600;
-
-      color: var(--green-dark);
-    }
-
-    .rsvp-numbers {
-      margin-top: 15px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .rsvp-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 45px;
-
-      padding:
-        0 19px;
-
-      border-radius: 999px;
-
-      text-decoration: none;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 18px;
-      font-weight: 600;
-
-      color: var(--green-dark);
-
-      background: #f7f1e9;
-
-      border:
-        1px solid rgba(167, 123, 67, 0.19);
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-    }
-
-    .rsvp-number:hover {
-      transform: translateY(-2px);
-      background: white;
-    }
-
-    .footer {
-      max-width: 690px;
-
-      margin: 38px auto 0;
-
-      text-align: center;
-    }
-
-    .footer-name {
-      font-family: "Great Vibes", cursive;
-
-      font-size: 42px;
-
-      color: var(--gold);
-    }
-
-    .footer p {
-      margin-top: 5px;
-
-      font-size: 9px;
-
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-
-      color: var(--green-soft);
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 560px) {
-      .intro {
-        padding:
-          28px 14px 65px;
-      }
-
-      .intro-copy {
-        margin-bottom: 28px;
-      }
-
-      .envelope-stage {
-        min-height: 480px;
-      }
-
-      .envelope {
-        height: 245px;
-      }
-
-      .invitation-preview {
-        height: 455px;
-
-        transform:
-          translateY(165px);
-      }
-
-      .preview-content {
-        padding:
-          28px 21px 20px;
-      }
-
-      .preview-content h2 {
-        font-size: 26px;
-      }
-
-      .preview-name {
-        font-size: 39px;
-      }
-
-      .seal-group {
-        gap: 9px;
-      }
-
-      .seal-letter {
-        font-size: 25px;
-      }
-
-      .heart-seal {
-        width: 68px;
-        height: 68px;
-      }
-
-      .envelope.open
-      .invitation-preview {
-        transform:
-          translateY(-135px);
-      }
-
-      .invitation-page {
-        padding:
-          55px 14px 75px;
-      }
-
-      .main-card {
-        padding:
-          49px 22px 42px;
-
-        border-radius: 25px;
-      }
-
-      .main-card::before {
-        inset: 10px;
-
-        border-radius: 18px;
-      }
-
-      .details-area {
-        grid-template-columns: 1fr;
-      }
-
-      .programme-row {
-        font-size: 17px;
-      }
-
-      .rsvp-numbers {
-        flex-direction: column;
-      }
-
-      .rsvp-number {
-        width: 100%;
-        max-width: 265px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 
 <body>
 
   <!-- =========================
-       OPENING SCREEN
+       OPENING
   ========================== -->
 
-  <section class="intro">
+  <section class="opening" id="opening">
 
-    <div class="ambient one"></div>
-    <div class="ambient two"></div>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
 
+    <div class="opening-inner">
 
-    <div class="intro-inner">
-
-      <div class="intro-kicker">
+      <p class="opening-label">
         Nikkah Invitation
-      </div>
+      </p>
 
-      <h1 class="intro-title">
+      <h1 class="opening-title">
         You're Invited
       </h1>
 
-      <p class="intro-copy">
-        With love and gratitude,
-        we invite you to join us
-        for this blessed celebration.
+      <p class="opening-copy">
+        With gratitude and joy, we invite you
+        to join us for this blessed occasion.
       </p>
 
 
+      <!-- ENVELOPE -->
+
       <div class="envelope-stage">
 
-        <div
-          class="envelope"
-          id="envelope"
-        >
+        <div class="envelope" id="envelope">
 
           <div class="envelope-shadow"></div>
 
@@ -1371,64 +69,52 @@
 
           <!-- CARD INSIDE ENVELOPE -->
 
-          <div class="invitation-preview">
+          <div class="preview-card">
 
             <div class="preview-border"></div>
 
-            <div
-              class="preview-decoration left"
-            ></div>
-
-            <div
-              class="preview-decoration right"
-            ></div>
-
+            <div class="preview-leaf preview-leaf-one"></div>
+            <div class="preview-leaf preview-leaf-two"></div>
 
             <div class="preview-content">
 
-              <div class="preview-small">
+              <p class="preview-label">
                 Nikkah Ceremony
-              </div>
+              </p>
 
-              <h2>
+              <h2 class="preview-title">
                 NIKKAH CEREMONY
               </h2>
 
-              <div class="preview-grandson">
-                OF THEIR BELOVED GRAND SON
-              </div>
-
-
-              <div class="preview-name">
+              <p class="preview-name">
                 Furqan Moin
-              </div>
+              </p>
 
-              <div class="preview-parent">
+              <p class="preview-parent">
                 S/O. MR. &amp; MRS. MOINUDDIN
-              </div>
+              </p>
 
-
-              <span class="preview-and">
+              <p class="preview-and">
                 and
-              </span>
+              </p>
 
-              <span class="preview-daughter">
+              <p class="preview-daughter">
                 Daughter of
-              </span>
+              </p>
 
-              <div class="preview-bride-parent">
+              <p class="preview-bride-family">
                 MEHMOOD ESSA
-              </div>
-
+              </p>
 
               <div class="preview-divider"></div>
 
-
-              <div class="preview-detail">
+              <p class="preview-info">
                 AFTER ZOHOR NAMAZ 1:30 PM
-                <br>
+              </p>
+
+              <p class="preview-info preview-venue">
                 VENUE: JAMAH MASJID PIB COLONY
-              </div>
+              </p>
 
             </div>
 
@@ -1444,46 +130,44 @@
 
           <!-- FLAP -->
 
-          <div class="flap"></div>
+          <div class="flap">
+            <div class="flap-pattern"></div>
+          </div>
 
 
           <!-- F ♥ L -->
 
-          <div class="seal-group">
+          <div class="seal-composition">
 
-            <span
-              class="seal-letter"
-              aria-hidden="true"
-            >
+            <span class="seal-letter">
               F
             </span>
+
+            <span class="seal-line"></span>
 
 
             <button
               class="heart-seal"
               id="openInvitation"
-              aria-label="Open Nikkah invitation"
               type="button"
+              aria-label="Open Nikkah invitation"
             >
-              <span aria-hidden="true">
-                ♥
-              </span>
+              <span aria-hidden="true">♥</span>
             </button>
 
 
-            <span
-              class="seal-letter"
-              aria-hidden="true"
-            >
+            <span class="seal-line"></span>
+
+            <span class="seal-letter">
               L
             </span>
 
           </div>
 
 
-          <div class="tap-text">
+          <p class="open-hint">
             Tap the heart to open
-          </div>
+          </p>
 
         </div>
 
@@ -1496,7 +180,7 @@
 
 
   <!-- =========================
-       FULL INVITATION
+       INVITATION DETAILS
   ========================== -->
 
   <main
@@ -1504,216 +188,143 @@
     id="invitationPage"
   >
 
-    <section class="main-card">
+    <section class="invitation-card">
 
-      <div class="leaf top"></div>
-      <div class="leaf bottom"></div>
+      <div class="card-outline"></div>
+
+      <div class="corner-decoration corner-top"></div>
+      <div class="corner-decoration corner-bottom"></div>
 
 
-      <div class="card-inner">
+      <div class="invitation-content">
 
-        <div class="bismillah">
+        <p class="gratitude">
           With Gratitude
-        </div>
+        </p>
 
 
         <h2 class="ceremony-title">
           NIKKAH CEREMONY
         </h2>
 
-        <div class="grandson">
-          OF THEIR BELOVED GRAND SON
-        </div>
-
-
-        <div class="groom-name">
-          Furqan Moin
-        </div>
-
-        <div class="groom-parents">
-          S/O. MR. &amp; MRS. MOINUDDIN
-        </div>
-
-
-        <span class="and-large">
-          and
-        </span>
-
-
-        <span class="daughter-of">
-          Daughter of
-        </span>
-
-        <div class="bride-parent">
-          MEHMOOD ESSA
-        </div>
-
 
         <div class="ornament">
-          <span>◆</span>
+          <span></span>
+          <i>✦</i>
+          <span></span>
         </div>
 
 
-        <div class="ceremony-info">
-
-          <strong>
-            AFTER ZOHOR NAMAZ
-          </strong>
-
-          <br>
-
-          1:30 PM
-
-          <br><br>
-
-          <strong>
-            VENUE:
-          </strong>
-
-          <br>
-
-          JAMAH MASJID PIB COLONY
-
-          <br>
-
-          KARACHI
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- LOCATION + PROGRAMME -->
-
-    <div class="details-area">
-
-
-      <section class="info-card">
-
-        <div class="info-label">
-          Location
-        </div>
-
-        <h3>
-          Jamah Masjid
+        <h3 class="groom-name">
+          Furqan Moin
         </h3>
 
-        <p>
-          PIB Colony
-          <br>
-          Karachi
+
+        <p class="groom-parent">
+          S/O. MR. &amp; MRS. MOINUDDIN
         </p>
 
-        <a
-          class="location-button"
-          href="https://www.google.com/maps/search/?api=1&query=Jamah+Masjid+PIB+Colony+Karachi"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open Location
-        </a>
 
-      </section>
+        <p class="and-text">
+          and
+        </p>
 
 
+        <p class="daughter-text">
+          Daughter of
+        </p>
 
-      <section class="info-card">
 
-        <div class="info-label">
-          Programme
-        </div>
-
-        <h3>
-          Programme
+        <h3 class="bride-family">
+          MEHMOOD ESSA
         </h3>
 
 
-        <div class="programme">
-
-          <div class="programme-row">
-
-            <span class="programme-title">
-              Gathering
-            </span>
-
-            <span class="dots"></span>
-
-            <span class="programme-time">
-              09:00 PM
-            </span>
-
-          </div>
+        <div class="ornament ornament-middle">
+          <span></span>
+          <i>◆</i>
+          <span></span>
+        </div>
 
 
-          <div class="programme-row">
+        <div class="ceremony-details">
 
-            <span class="programme-title">
-              Dinner
-            </span>
+          <p class="detail-label">
+            After Zohor Namaz
+          </p>
 
-            <span class="dots"></span>
+          <p class="detail-main">
+            1:30 PM
+          </p>
 
-            <span class="programme-time">
-              10:30 PM
-            </span>
+
+          <div class="tiny-divider"></div>
+
+
+          <p class="detail-label">
+            Venue
+          </p>
+
+          <p class="venue-name">
+            JAMAH MASJID PIB COLONY
+          </p>
+
+          <p class="city">
+            Karachi
+          </p>
+
+
+          <a
+            class="location-button"
+            href="https://www.google.com/maps/search/?api=1&query=Jamah+Masjid+PIB+Colony+Karachi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="location-icon">⌖</span>
+            View Location
+          </a>
+
+        </div>
+
+
+        <!-- RSVP -->
+
+        <div class="rsvp">
+
+          <p class="rsvp-label">
+            R.S.V.P.
+          </p>
+
+          <div class="rsvp-numbers">
+
+            <a href="tel:+923222466034">
+              0322-2466034
+            </a>
+
+            <span class="rsvp-separator"></span>
+
+            <a href="tel:+923009254556">
+              0300-9254556
+            </a>
 
           </div>
 
         </div>
-
-      </section>
-
-
-    </div>
-
-
-
-    <!-- RSVP -->
-
-    <section class="rsvp-card">
-
-      <div class="info-label">
-        R.S.V.P.
-      </div>
-
-      <div class="rsvp-title">
-        We look forward to welcoming you
-      </div>
-
-
-      <div class="rsvp-numbers">
-
-        <a
-          class="rsvp-number"
-          href="tel:+923222466034"
-        >
-          0322-2466034
-        </a>
-
-
-        <a
-          class="rsvp-number"
-          href="tel:+923009254556"
-        >
-          0300-9254556
-        </a>
 
       </div>
 
     </section>
-
 
 
     <footer class="footer">
 
-      <div class="footer-name">
-        Furqan Moin
-      </div>
+      <p class="footer-script">
+        Furqan
+        <span>&amp;</span>
+        Laiba
+      </p>
 
-      <p>
+      <p class="footer-small">
         Nikkah Ceremony
       </p>
 
@@ -1722,69 +333,7 @@
   </main>
 
 
-
-  <script>
-    const envelope =
-      document.getElementById("envelope");
-
-    const openInvitation =
-      document.getElementById("openInvitation");
-
-    const invitationPage =
-      document.getElementById("invitationPage");
-
-    let opened = false;
-
-
-    openInvitation.addEventListener(
-      "click",
-      () => {
-
-        if (opened) return;
-
-        opened = true;
-
-
-        envelope.classList.add("open");
-
-
-        setTimeout(
-          () => {
-
-            invitationPage.classList.add(
-              "visible"
-            );
-
-            requestAnimationFrame(
-              () => {
-
-                invitationPage.classList.add(
-                  "show"
-                );
-
-              }
-            );
-
-          },
-          1150
-        );
-
-
-        setTimeout(
-          () => {
-
-            invitationPage.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-
-          },
-          2050
-        );
-
-      }
-    );
-  </script>
+  <script src="script.js"></script>
 
 </body>
 
